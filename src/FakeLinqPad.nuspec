@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>FakeLinqPad</id>
+    <version>1.0.0</version>
+    <title>Fake LINQPad</title>
+    <authors>Atif Aziz</authors>
+    <owners>Atif Aziz</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>https://github.com/linqpadless/FakeLinqPad</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>Fake replacement for LINQPad API.</summary>
+    <description>A library mostly designed to be used with LINQPad queries compiled using LinqPadless. It fakes some of the LINQPad API so that it can be used as a stand-in replacement and LINQPad queries do not have to be re-written when executed without LINQPad.</description>
+    <copyright>Copyright &#xa9; 2016 Atif Aziz. All rights reserved.</copyright>
+    <tags>linq linqpad</tags>
+  </metadata>
+</package>
