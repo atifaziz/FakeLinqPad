@@ -1,1 +1,1 @@
-@nuget pack "%~dp0\src\FakeLinqPad.csproj" %*
+@nuget pack -Symbols "%~dp0\src\FakeLinqPad.csproj" %*
