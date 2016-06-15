@@ -14,15 +14,19 @@
 //
 #endregion
 
-namespace FakeLinqPad
+namespace FakeLinqPad.Fakers
 {
     using System;
+    using System.IO;
 
-    static class Environment
+    public class FakeExtensions : IExtensions
     {
-        const string Prefix = nameof(FakeLinqPad) + ".";
+        public virtual TextWriter DumpWriter { get; set; } = Console.Error;
 
-        public static T TryGet<T>(string name) =>
-            (T) AppDomain.CurrentDomain.GetData(Prefix + name);
+        public virtual T Dump<T>(T o)
+        {
+            DumpWriter.WriteLine(o);
+            return o;
+        }
     }
 }

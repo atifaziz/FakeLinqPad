@@ -16,20 +16,17 @@
 
 namespace FakeLinqPad
 {
-    using System;
-    using System.IO;
+    using Fakers;
+
+    public interface IExtensions
+    {
+        T Dump<T>(T o);
+    }
 
     public static class Extensions
     {
-        static TextWriter _dumpWriter;
+        public static IExtensions Faker { get; set; } = Fakes.Extensions;
 
-        static TextWriter DumpWriter =>
-            _dumpWriter ?? (_dumpWriter = Environment.TryGet<TextWriter>("DumpWriter") ?? Console.Error);
-
-        public static T Dump<T>(this T o)
-        {
-            DumpWriter.WriteLine(o);
-            return o;
-        }
+        public static T Dump<T>(this T o) => Faker.Dump(o);
     }
 }

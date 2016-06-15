@@ -14,20 +14,11 @@
 //
 #endregion
 
-namespace FakeLinqPad
+namespace FakeLinqPad.Fakers
 {
-    using System.Net;
-    using Fakers;
-
-    public interface IUtil
+    public static class Fakes
     {
-        IWebProxy GetWebProxy();
-    }
-
-    public static class Util
-    {
-        public static IUtil Faker { get; set; } = Fakes.Util;
-
-        public static IWebProxy GetWebProxy() => Faker.GetWebProxy();
+        public static readonly FakeExtensions Extensions = new FakeExtensions();
+        public static readonly FakeUtil Util = new FakeUtil();
     }
 }

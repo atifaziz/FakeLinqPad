@@ -14,20 +14,28 @@
 //
 #endregion
 
-namespace FakeLinqPad
+namespace FakeLinqPad.Fakers
 {
     using System.Net;
-    using Fakers;
 
-    public interface IUtil
+    public class FakeUtil : IUtil
     {
-        IWebProxy GetWebProxy();
-    }
+        IWebProxy _webProxy;
 
-    public static class Util
-    {
-        public static IUtil Faker { get; set; } = Fakes.Util;
+        public virtual IWebProxy WebProxy
+        {
+            get { return _webProxy ?? (_webProxy = CreateDefaultWebProxy()); }
+            set { _webProxy = value; }
+        }
 
-        public static IWebProxy GetWebProxy() => Faker.GetWebProxy();
+        public virtual IWebProxy GetWebProxy() => WebProxy;
+
+        static IWebProxy CreateDefaultWebProxy()
+        {
+            var proxy = WebRequest.GetSystemWebProxy();
+            if (proxy.Credentials == null)
+                proxy.Credentials = CredentialCache.DefaultCredentials;
+            return proxy;
+        }
     }
 }
