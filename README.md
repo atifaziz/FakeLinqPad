@@ -1,5 +1,8 @@
 # FakeLinqPad
 
+[![NuGet][nuget-badge]][nuget-pkg]
+
+
 FakeLinqPad is a library mostly designed to be used with [LINQPad][linqpad]
 queries compiled using [LinqPadless][lpless]. It fakes some of the [LINQPad
 API][linqpad-api] so that it can be used as a stand-in replacement and LINQPad
@@ -25,3 +28,5 @@ the risk of being rejected if you need to start over.
 [stderr]: https://msdn.microsoft.com/en-us/library/system.console.error
 [newissue]: https://github.com/linqpadless/FakeLinqPad/issues/new
 [newpr]: https://github.com/linqpadless/FakeLinqPad/compare
+[nuget-badge]: https://img.shields.io/nuget/v/FakeLinqPad.svg
+[nuget-pkg]: https://www.nuget.org/packages/FakeLinqPad
