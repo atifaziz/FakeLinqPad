@@ -23,8 +23,14 @@ namespace FakeLinqPad.Fakers
     {
         public virtual TextWriter DumpWriter { get; set; } = Console.Error;
 
-        public virtual T Dump<T>(T o)
+        public virtual T Dump<T>(T o, string description, int? depth, bool toDataGrid)
         {
+            if (description?.Length > 0)
+            {
+                DumpWriter.WriteLine(new string('=', description.Length));
+                DumpWriter.WriteLine(description);
+                DumpWriter.WriteLine(new string('-', description.Length));
+            }
             DumpWriter.WriteLine(o);
             return o;
         }

@@ -20,13 +20,18 @@ namespace FakeLinqPad
 
     public interface IExtensions
     {
-        T Dump<T>(T o);
+        T Dump<T>(T o, string description, int? depth, bool toDataGrid);
     }
 
     public static class Extensions
     {
         public static IExtensions Faker { get; set; } = Fakes.Extensions;
 
-        public static T Dump<T>(this T o) => Faker.Dump(o);
+        public static T Dump<T>(this T o) => o.Dump(description: null);
+        public static T Dump<T>(this T o, string description) => o.Dump(description, depth: null);
+        public static T Dump<T>(this T o, int depth) => o.Dump(null, depth);
+        public static T Dump<T>(this T o, bool toDataGrid) => o.Dump(null, toDataGrid);
+        public static T Dump<T>(this T o, string description, int? depth) => Faker.Dump(o, description, depth, toDataGrid: false);
+        public static T Dump<T>(this T o, string description, bool toDataGrid) => Faker.Dump(o, description, null, toDataGrid);
     }
 }
