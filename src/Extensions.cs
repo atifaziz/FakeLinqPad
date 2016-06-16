@@ -27,12 +27,23 @@ namespace FakeLinqPad
     {
         public static IExtensions Faker { get; set; } = Fakes.Extensions;
 
-        public static T Dump<T>(this T o) => o.Dump(description: null);
-        public static T Dump<T>(this T o, string description) => o.Dump(description, depth: null);
-        public static T Dump<T>(this T o, int depth) => o.Dump(null, depth);
-        public static T Dump<T>(this T o, bool toDataGrid) => o.Dump(null, toDataGrid);
-        public static T Dump<T>(this T o, string description, int? depth) => Faker.Dump(o, description, depth, toDataGrid: false);
-        public static T Dump<T>(this T o, string description, bool toDataGrid) => Faker.Dump(o, description, null, toDataGrid);
+        public static T Dump<T>(this T o) =>
+            o.Dump(description: null);
+
+        public static T Dump<T>(this T o, string description) =>
+            o.Dump(description, depth: null);
+
+        public static T Dump<T>(this T o, int depth) =>
+            o.Dump(null, depth);
+
+        public static T Dump<T>(this T o, bool toDataGrid) =>
+            o.Dump(null, toDataGrid);
+
+        public static T Dump<T>(this T o, string description, int? depth) =>
+            Faker.Dump(o, description, depth, toDataGrid: false);
+
+        public static T Dump<T>(this T o, string description, bool toDataGrid) =>
+            Faker.Dump(o, description, null, toDataGrid);
 
         // Possibly to support one fine day if it makes sense...
 
