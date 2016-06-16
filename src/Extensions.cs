@@ -33,5 +33,29 @@ namespace FakeLinqPad
         public static T Dump<T>(this T o, bool toDataGrid) => o.Dump(null, toDataGrid);
         public static T Dump<T>(this T o, string description, int? depth) => Faker.Dump(o, description, depth, toDataGrid: false);
         public static T Dump<T>(this T o, string description, bool toDataGrid) => Faker.Dump(o, description, null, toDataGrid);
+
+        // Possibly to support one fine day if it makes sense...
+
+        // public static T DumpTrace<T>(this T o) { ... }
+        // public static T DumpTrace<T>(this T o, string description) { ... }
+        // public static T DumpTrace<T>(this T o, int depth) { ... }
+        // public static T DumpTrace<T>(this T o, string description, int? depth) { ... }
+        // public static T DumpTrace<T>(this T o, string description, bool toDataGrid) { ... }
+        // public static DumpContainer OnDemand<T>(this IEnumerable<T> sequence) { ... }
+        // public static DumpContainer OnDemand(this IEnumerable sequence, string description) { ... }
+        // public static string Disassemble(this MethodBase method) { ... }
+        // public static object ToImage(this Binary imageData) { ... }
+        // public static IObservable<T> DumpLive<T>(this IObservable<T> obs) { ... }
+        // public static IObservable<T> DumpLive<T>(this IObservable<T> obs, string heading) { ... }
+        // public static XElement DumpFormatted(this XElement xml) { ... }
+        // public static XElement DumpFormatted(this XElement xml, string heading) { ... }
+        // public static XDocument DumpFormatted(this XDocument xml) { ... }
+        // public static XDocument DumpFormatted(this XDocument xml, string heading) { ... }
+        // public static XmlDocument DumpFormatted(this XmlDocument xml) { ... }
+        // public static XmlDocument DumpFormatted(this XmlDocument xml, string heading) { ... }
+        // public static XmlElement DumpFormatted(this XmlElement xml) { ... }
+        // public static XmlElement DumpFormatted(this XmlElement xml, string heading) { ... }
+        // public static T[] Cache<T>(this IEnumerable<T> query) { ... }
+        // public static T[] Cache<T>(this IEnumerable<T> query, string key) { ... }
     }
 }
