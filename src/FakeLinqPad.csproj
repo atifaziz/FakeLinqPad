@@ -39,6 +39,7 @@
     <Compile Include="Fakers\FakeExtensions.cs" />
     <Compile Include="Fakers\Fakes.cs" />
     <Compile Include="Fakers\FakeUtil.cs" />
+    <Compile Include="HostDiscovery.cs" />
     <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
